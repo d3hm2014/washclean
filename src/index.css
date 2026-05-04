@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'IBM Plex Sans Arabic', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-emerald-600 text-white px-4 py-2.5 rounded-xl font-medium
+           hover:bg-emerald-700 active:scale-95 transition-all
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 px-4 py-2.5 rounded-xl font-medium
+           hover:bg-gray-200 active:scale-95 transition-all
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-sm p-4;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl
+           focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500
+           focus:outline-none text-sm transition-all;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
